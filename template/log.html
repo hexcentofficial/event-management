@@ -1,0 +1,43 @@
+{% load static %}
+    <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/stylelog.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <div class="container">
+    <div class="title">Login</div>
+    <div class="content">
+     <form action="" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+             <label>User Name : </label>
+        <input type="text" name="username">
+          </div>
+
+          <div class="input-box">
+               <label>Password : </label>
+               <input type="password" name="password">  
+          </div>
+         
+          </div>
+        <div class="button">
+          <input type="submit" name="submit" value="LogIn">
+        </div>
+      </form>
+      <div>
+        {% for message in messages %}
+        <script>
+          alert('{{message}}');
+        </script>
+        {% endfor %}
+        </div>
+     
+    </div>
+  </div>
+</body>
+</html>
